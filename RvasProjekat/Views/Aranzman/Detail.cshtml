@@ -1,0 +1,28 @@
+﻿@model RvasProjekat.Models.Aranzman
+@{
+    ViewBag.Title = "Home Page";
+}
+<img src="@Model.slika" style="width:100%; height: 350px;object-fit: cover;" />
+
+<div class="container">
+    <div style="text-align: center;">
+        <h1>@Model.drzava</h1>
+        <h2>@Model.grad</h2>
+        <h3>@Model.cena €</h3>
+    </div>
+    <p>@Model.opis</p>
+
+
+
+    <h4> Rezervisi </h4>
+
+    @if (Request.IsAuthenticated)
+    {
+        <h2>eee</h2>
+    }
+    else
+    {
+        <h4>Niste prijavljeni, da biste rezervisali morate da se ulogujete.</h4>
+        @Html.ActionLink("Ulogujte se", "Login", "Account", new { id = Model.Id }, new { @class = "btn btn-danger" })
+    }
+</div>
